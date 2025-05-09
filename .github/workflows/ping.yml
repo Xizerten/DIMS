@@ -3,7 +3,7 @@ name: Notify Local Server
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   ping:
