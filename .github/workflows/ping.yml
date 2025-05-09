@@ -1,0 +1,17 @@
+name: Notify Local Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send update signal to local server
+        run: |
+          curl -X POST  -H "git-token: $TOKEN" http://$LOCAL_SERVER_IP:9000/
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          LOCAL_SERVER_IP: ${{ secrets.LOCAL_SERVER_IP }}
