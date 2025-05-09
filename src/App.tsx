@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Select Seat</h1>
+      <h1>Select Seat update test</h1>
       
       <Canvas width={400} height={300}>
         {seats.map(seat => (
